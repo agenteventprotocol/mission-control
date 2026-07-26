@@ -1,0 +1,20 @@
+# Automated dependency updates: the GitHub Actions used by CI, and the pnpm
+# workspace's dependencies (root + app; the vendored SDK snapshot is pinned
+# by SDK_VERSION and excluded from updates by construction — it has no
+# lockfile of its own).
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      actions:
+        patterns: ["*"]
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      npm:
+        patterns: ["*"]

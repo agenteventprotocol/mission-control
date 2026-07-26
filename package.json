@@ -1,0 +1,31 @@
+{
+  "name": "@aep/mission-control",
+  "private": true,
+  "version": "0.1.0-dev",
+  "description": "Mission Control: real-time fleet UI for AEP agent sessions (live lanes, an attention inbox with tap-to-respond, causal graphs)",
+  "license": "Apache-2.0",
+  "repository": { "type": "git", "url": "git+https://github.com/agenteventprotocol/mission-control.git" },
+  "homepage": "https://github.com/agenteventprotocol/mission-control#readme",
+  "bugs": "https://github.com/agenteventprotocol/mission-control/issues",
+  "keywords": ["aep", "agent-events", "observability", "mission-control", "fleet", "ui"],
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@11.5.2",
+  "scripts": {
+    "build:sdk": "pnpm --filter @aep/sdk exec tsc -p tsconfig.build.json",
+    "typecheck:sdk": "pnpm --filter @aep/sdk exec tsc -p tsconfig.json --noEmit",
+    "dev": "pnpm run build:sdk && pnpm --filter @aep/mission-control-app run dev",
+    "build": "pnpm run build:sdk && pnpm --filter @aep/mission-control-app run build",
+    "preview": "pnpm --filter @aep/mission-control-app run preview",
+    "typecheck": "pnpm run typecheck:sdk && pnpm --filter @aep/mission-control-app run typecheck",
+    "lint": "pnpm --filter @aep/mission-control-app run lint",
+    "test": "pnpm --filter @aep/mission-control-app run test",
+    "test:e2e": "pnpm --filter @aep/mission-control-app run test:e2e",
+    "check": "bash ci.sh"
+  },
+  "devDependencies": {
+    "typescript": "6.0.3"
+  }
+}

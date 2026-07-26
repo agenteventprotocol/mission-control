@@ -1,0 +1,242 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Design tokens. The UI is black-and-white-and-between: every surface,
+ * control and identity reads in the neutral ink scale. Color exists only
+ * for strictly significant meaning, always paired with a visible label:
+ *  - attention pink — an agent is waiting on a human;
+ *  - severity heat (amber/orange/red) from `warning` up; below that the
+ *    scale is neutral steps;
+ *  - live green — the relay connection is healthy (one dot, in the rail);
+ *  - destructive red — irreversible actions.
+ */
+:root {
+  /* Chrome is monochrome: one unified neutral for logo, actions, buttons,
+     focus. Color is reserved for meaning — event families, severity,
+     connection/attention status. */
+  --background: #fafafa;
+  --foreground: #111113;
+  --card: #ffffff;
+  --card-foreground: #111113;
+  --popover: #ffffff;
+  --popover-foreground: #111113;
+  --muted: #f4f4f5;
+  --muted-foreground: #52525b;
+  --faint: #8e8e96;
+  --accent: #f0f0f1;
+  --accent-foreground: #111113;
+  --primary: #18181b;
+  --primary-foreground: #fafafa;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: rgb(0 0 0 / 0.1);
+  --input: rgb(0 0 0 / 0.15);
+  --ring: #18181b;
+  --grid: #e9e9eb;
+
+  --family-attention: #ec4899;
+  --live: #047857;
+
+  /* Severity: grayscale until it matters, then heat (never shares a hue
+     with a type family — amber/orange/red are severity-only). */
+  --severity-debug: #9aa3af;
+  --severity-info: #64748b;
+  --severity-notice: #1e293b;
+  --severity-warning: #b45309;
+  --severity-error: #c2410c;
+  --severity-critical: #dc2626;
+}
+
+.dark {
+  --background: #0a0a0b;
+  --foreground: #f4f4f5;
+  --card: #111113;
+  --card-foreground: #f4f4f5;
+  --popover: #18181b;
+  --popover-foreground: #f4f4f5;
+  --muted: #1c1c1f;
+  --muted-foreground: #b3b3ba;
+  --faint: #7d7d86;
+  --accent: #212124;
+  --accent-foreground: #f4f4f5;
+  --primary: #fafafa;
+  --primary-foreground: #111113;
+  --destructive: #e5484d;
+  --destructive-foreground: #ffffff;
+  --border: rgb(255 255 255 / 0.09);
+  --input: rgb(255 255 255 / 0.14);
+  --ring: #d4d4d8;
+  --grid: #222225;
+
+  --family-attention: #e2438f;
+  --live: #0d9e6b;
+
+  --severity-debug: #5f6774;
+  --severity-info: #9aa4b2;
+  --severity-notice: #e2e8f0;
+  --severity-warning: #fbbf24;
+  --severity-error: #f97316;
+  --severity-critical: #ef4444;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-grid: var(--grid);
+
+  --color-family-attention: var(--family-attention);
+  --color-live: var(--live);
+
+  --color-severity-debug: var(--severity-debug);
+  --color-severity-info: var(--severity-info);
+  --color-severity-notice: var(--severity-notice);
+  --color-severity-warning: var(--severity-warning);
+  --color-severity-error: var(--severity-error);
+  --color-severity-critical: var(--severity-critical);
+
+  --font-sans:
+    system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 1px;
+  }
+
+  /* Themed thin scrollbars everywhere a native scroll container remains
+     (virtualized lists own their scroll element, so they can't use the
+     ScrollArea component). */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--input) transparent;
+  }
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  *::-webkit-scrollbar-thumb {
+    border-radius: 9999px;
+    background: var(--input);
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background: var(--faint);
+  }
+}
+
+/* Attention chips that are still actionable pulse gently. */
+@keyframes mc-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--family-attention) 55%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 4px transparent;
+  }
+}
+.mc-chip-pending {
+  animation: mc-pulse 1.6s ease-in-out infinite;
+}
+
+/* Live indicators breathe: a soft expanding ring in the dot's own color
+   (set `color` alongside the background on the dot element). */
+@keyframes mc-live {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, currentColor 45%, transparent);
+  }
+  70%,
+  100% {
+    box-shadow: 0 0 0 5px transparent;
+  }
+}
+.mc-live-dot {
+  animation: mc-live 2.2s ease-out infinite;
+}
+
+/* The attention dock slides in over the content (it never reflows the
+   page); new cards flash their border once. */
+@keyframes mc-dock-in {
+  from {
+    transform: translateX(calc(100% + 16px));
+  }
+  to {
+    transform: none;
+  }
+}
+.mc-dock {
+  animation: mc-dock-in 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+@keyframes mc-card-arrive {
+  from {
+    border-color: var(--family-attention);
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--family-attention) 25%, transparent);
+  }
+}
+.mc-attention-card {
+  animation: mc-card-arrive 1.2s ease-out;
+}
+
+/* Active run segments in the fleet run ribbon shimmer softly. */
+@keyframes mc-shimmer {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+.mc-run-active {
+  animation: mc-shimmer 1.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mc-chip-pending {
+    animation: none;
+    outline: 2px solid var(--family-attention);
+    outline-offset: 1px;
+  }
+  .mc-live-dot,
+  .mc-dock,
+  .mc-attention-card,
+  .mc-run-active {
+    animation: none;
+  }
+}

@@ -1,0 +1,52 @@
+# Mission Control CI — typecheck + lint + unit/component tests + headless
+# end-to-end beats (against the vendored relay fixture) + production build,
+# plus a vendor-sync job that re-clones the SDK repo at the ref pinned in
+# SDK_VERSION and fails on any drift in the vendored snapshot.
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Least privilege: nothing here writes to the repository.
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
+        # version comes from the packageManager field in package.json
+
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Run the CI script (install, typecheck, lint, tests, e2e, build)
+        run: bash ci.sh
+
+  vendor-sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - name: Clone the SDK repo at the pinned ref
+        run: |
+          git clone --quiet https://github.com/agenteventprotocol/typescript-sdk.git "$RUNNER_TEMP/sdk"
+          git -C "$RUNNER_TEMP/sdk" checkout --quiet "$(cat SDK_VERSION)"
+
+      - name: Diff the vendored snapshot (must be byte-identical)
+        run: |
+          set -euo pipefail
+          for f in tsconfig.json tsconfig.build.json package.json LICENSE; do
+            diff -u "$RUNNER_TEMP/sdk/$f" "vendor/aep-sdk/$f"
+          done
+          diff -ru "$RUNNER_TEMP/sdk/src" vendor/aep-sdk/src
+          echo "vendored SDK matches typescript-sdk@$(cat SDK_VERSION)"

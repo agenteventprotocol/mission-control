@@ -1,0 +1,4 @@
+* text=auto eol=lf
+pnpm-lock.yaml linguist-generated
+vendor/aep-sdk/** linguist-vendored
+app/test/fixtures/** linguist-vendored
