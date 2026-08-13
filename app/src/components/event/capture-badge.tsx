@@ -2,7 +2,7 @@
 // tells the reader how much payload content the emitter was allowed to
 // ship. Monochrome except `redacted` — the one level that means "withheld
 // content is present in this payload".
-import type { Capture } from '@aep/sdk';
+import type { Capture } from '@agenteventprotocol/sdk';
 import { Eye, EyeOff, ScanEye, FileText } from 'lucide-react';
 import { cn } from '@/lib/utils';
 

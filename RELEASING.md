@@ -10,7 +10,7 @@ canonical
 Mission Control releases as a **tagged whole** on its own SemVer line,
 alongside protocol releases. Nothing here is published to a registry: the
 app manifest carries the shared `0.1.0-dev` pre-release core for
-consistency only, and the vendored `@aep/sdk` under `vendor/aep-sdk/` is a
+consistency only, and the vendored `@agenteventprotocol/sdk` under `vendor/aep-sdk/` is a
 pinned snapshot, not a publishable package. The tag is the release.
 
 ## Cutting a release
@@ -29,6 +29,6 @@ pinned snapshot, not a publishable package. The tag is the release.
    push the tag. No build artifacts, no package publishes.
 6. Open the next `-dev` version core in a follow-up commit.
 
-Once `@aep/sdk` publishes to a registry, step 1 becomes an ordinary
+Once `@agenteventprotocol/sdk` publishes to a registry, step 1 becomes an ordinary
 dependency bump (see `vendor/aep-sdk/VENDORED.md`). Releases track protocol
 releases; there is no calendar.

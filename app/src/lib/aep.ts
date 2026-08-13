@@ -1,7 +1,7 @@
 // Presentation-side vocabulary helpers. These never re-derive protocol
 // semantics (that is the store's job) — they only map already-derived values
 // to display groupings.
-import type { Severity } from '@aep/sdk';
+import type { Severity } from '@agenteventprotocol/sdk';
 
 /** Type families with a dedicated color token; anything else renders muted. */
 export const FAMILIES = ['session', 'run', 'tool', 'attention', 'control'] as const;

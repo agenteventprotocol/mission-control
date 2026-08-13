@@ -2,7 +2,7 @@
 // There is no second source of truth and no out-of-band fetching. This module
 // is DOM- and framework-free by design — the same store runs in the browser
 // and in the headless test harness under Node.
-import type { AepEvent, Severity } from '@aep/sdk';
+import type { AepEvent, Severity } from '@agenteventprotocol/sdk';
 
 export type SessionStatus = 'active' | 'ended';
 export type RunState = 'active' | 'finished' | 'failed' | 'cancelled';

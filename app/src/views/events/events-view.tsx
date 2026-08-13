@@ -4,7 +4,7 @@
 import { useMemo, useRef, useState, useEffect } from 'react';
 import { useVirtualizer } from '@tanstack/react-virtual';
 import { RadioTower, Search } from 'lucide-react';
-import type { AepEvent, Severity } from '@aep/sdk';
+import type { AepEvent, Severity } from '@agenteventprotocol/sdk';
 import { familyOf, lastSegment, severityRank, shortSessionId, SEVERITIES } from '@/lib/aep';
 import { formatClock, formatCount } from '@/lib/format';
 import { summarize } from '@/lib/summary';

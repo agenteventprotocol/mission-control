@@ -1,8 +1,8 @@
 // Relay connection lifecycle: one SSE subscription feeding the store,
 // persisted resume positions, and a lazy ControlClient for the attention
 // inbox. DOM- and framework-free — position persistence is injected.
-import { subscribe, ControlClient, NackError } from '@aep/sdk';
-import type { Subscription, ResumePosition, AepEvent, RosterEntry } from '@aep/sdk';
+import { subscribe, ControlClient, NackError } from '@agenteventprotocol/sdk';
+import type { Subscription, ResumePosition, AepEvent, RosterEntry } from '@agenteventprotocol/sdk';
 import { steerVerb } from './steer-verbs.js';
 import type { Store, AttentionItem, LaneSource } from './store.js';
 

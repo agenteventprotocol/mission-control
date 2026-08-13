@@ -1,7 +1,7 @@
 // Reducer contract tests: ordering, idempotence, lifecycle derivations,
 // seq-less foreign-emitter events, DAG edges, severity counts, live tail.
 import { describe, expect, it } from 'vitest';
-import type { AepEvent } from '@aep/sdk';
+import type { AepEvent } from '@agenteventprotocol/sdk';
 import { Store } from '../src/core/store';
 
 let n = 0;

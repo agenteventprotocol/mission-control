@@ -14,7 +14,7 @@
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
-import type { AepEvent } from '@aep/sdk';
+import type { AepEvent } from '@agenteventprotocol/sdk';
 import { IMPORT_SOURCE, Store, laneKey } from '../src/core/store';
 import { importCapture } from '../src/core/import';
 

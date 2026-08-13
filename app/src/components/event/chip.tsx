@@ -3,7 +3,7 @@
 // warning severity or above carry heat. Identity is the visible type text.
 // Details ride on the shared hover card (see event-hover.tsx).
 import { memo } from 'react';
-import type { AepEvent } from '@aep/sdk';
+import type { AepEvent } from '@agenteventprotocol/sdk';
 import { lastSegment, severityRank } from '@/lib/aep';
 import { cn } from '@/lib/utils';
 import { useEventHover } from './event-hover';

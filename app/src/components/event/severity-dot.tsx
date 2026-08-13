@@ -1,6 +1,6 @@
 // Severity indicator: a status-colored dot that is never color-alone — the
 // label rides along visibly or via the title/aria text.
-import type { Severity } from '@aep/sdk';
+import type { Severity } from '@agenteventprotocol/sdk';
 import { cn } from '@/lib/utils';
 
 const SEVERITY_DOT: Record<string, string> = {

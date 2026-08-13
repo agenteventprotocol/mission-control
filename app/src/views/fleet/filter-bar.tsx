@@ -2,7 +2,7 @@
 // and the severity lens (a floor — events below it render dimmed, lanes
 // whose max severity is below it can be filtered out).
 import { Search, BellRing } from 'lucide-react';
-import type { Severity } from '@aep/sdk';
+import type { Severity } from '@agenteventprotocol/sdk';
 import { SEVERITIES } from '@/lib/aep';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';

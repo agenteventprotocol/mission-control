@@ -2,7 +2,7 @@
 // (source, session); a LaneSource names a relay or a capture import; the
 // capture rebind rule; per-source gating; the persisted relay config.
 import { describe, expect, it } from 'vitest';
-import type { AepEvent } from '@aep/sdk';
+import type { AepEvent } from '@agenteventprotocol/sdk';
 import { Store, laneKey, IMPORT_SOURCE, type LaneSource } from '../src/core/store';
 import {
   loadConfig, saveConfig, positionStore, ingestOpsConnectHash,

@@ -59,7 +59,7 @@ inherits that posture.
   coalesce store notifications on `requestAnimationFrame` and subscribe at
   lane granularity in the fleet, so a busy stream costs one render per
   frame per affected card, not one per event.
-- **`@aep/sdk` is consumed exactly as npm consumers will get it**: the
+- **`@agenteventprotocol/sdk` is consumed exactly as npm consumers will get it**: the
   pinned snapshot in `vendor/aep-sdk/` is a pnpm workspace package compiled
   to `dist/` with the SDK's own strict compiler settings (no `lib.dom` — it
   declares its own runtime surface), and the app resolves it through the

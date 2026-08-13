@@ -1,5 +1,5 @@
 {
-  "name": "@aep/mission-control",
+  "name": "@agenteventprotocol/mission-control",
   "private": true,
   "version": "0.1.0-dev",
   "description": "Mission Control: real-time fleet UI for AEP agent sessions (live lanes, an attention inbox with tap-to-respond, causal graphs)",
@@ -14,15 +14,15 @@
   },
   "packageManager": "pnpm@11.5.2",
   "scripts": {
-    "build:sdk": "pnpm --filter @aep/sdk exec tsc -p tsconfig.build.json",
-    "typecheck:sdk": "pnpm --filter @aep/sdk exec tsc -p tsconfig.json --noEmit",
-    "dev": "pnpm run build:sdk && pnpm --filter @aep/mission-control-app run dev",
-    "build": "pnpm run build:sdk && pnpm --filter @aep/mission-control-app run build",
-    "preview": "pnpm --filter @aep/mission-control-app run preview",
-    "typecheck": "pnpm run typecheck:sdk && pnpm --filter @aep/mission-control-app run typecheck",
-    "lint": "pnpm --filter @aep/mission-control-app run lint",
-    "test": "pnpm --filter @aep/mission-control-app run test",
-    "test:e2e": "pnpm --filter @aep/mission-control-app run test:e2e",
+    "build:sdk": "pnpm --filter @agenteventprotocol/sdk exec tsc -p tsconfig.build.json",
+    "typecheck:sdk": "pnpm --filter @agenteventprotocol/sdk exec tsc -p tsconfig.json --noEmit",
+    "dev": "pnpm run build:sdk && pnpm --filter @agenteventprotocol/mission-control-app run dev",
+    "build": "pnpm run build:sdk && pnpm --filter @agenteventprotocol/mission-control-app run build",
+    "preview": "pnpm --filter @agenteventprotocol/mission-control-app run preview",
+    "typecheck": "pnpm run typecheck:sdk && pnpm --filter @agenteventprotocol/mission-control-app run typecheck",
+    "lint": "pnpm --filter @agenteventprotocol/mission-control-app run lint",
+    "test": "pnpm --filter @agenteventprotocol/mission-control-app run test",
+    "test:e2e": "pnpm --filter @agenteventprotocol/mission-control-app run test:e2e",
     "check": "bash ci.sh"
   },
   "devDependencies": {

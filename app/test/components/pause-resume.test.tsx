@@ -6,7 +6,7 @@
 // the state at the metadata ceiling).
 import { describe, expect, it, vi } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import type { AepEvent } from '@aep/sdk';
+import type { AepEvent } from '@agenteventprotocol/sdk';
 import { laneKey, IMPORT_SOURCE, type LaneSource } from '../../src/core/store';
 import { Controller } from '../../src/state/controller';
 import { ControllerContext } from '../../src/state/use-store';

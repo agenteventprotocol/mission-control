@@ -1,6 +1,6 @@
 // One-line, capture-tolerant summaries for timeline / tail rows. Purely
 // cosmetic: unknown shapes fall back to nothing rather than guessing.
-import type { AepEvent } from '@aep/sdk';
+import type { AepEvent } from '@agenteventprotocol/sdk';
 
 function str(v: unknown): string | undefined {
   return typeof v === 'string' && v ? v : undefined;

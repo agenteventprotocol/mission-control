@@ -18,8 +18,8 @@ import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'no
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { ulid } from '@aep/sdk';
-import type { AepEvent, ResumePosition } from '@aep/sdk';
+import { ulid } from '@agenteventprotocol/sdk';
+import type { AepEvent, ResumePosition } from '@agenteventprotocol/sdk';
 import { Store, laneKey } from '../src/core/store';
 import { Connection } from '../src/core/connection';
 import type { PositionStore } from '../src/core/connection';

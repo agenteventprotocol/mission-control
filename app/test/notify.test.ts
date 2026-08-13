@@ -3,7 +3,7 @@
 // operator opted in, the browser granted permission, the tab is hidden,
 // and the item is actually actionable.
 import { describe, expect, it } from 'vitest';
-import type { AepEvent } from '@aep/sdk';
+import type { AepEvent } from '@agenteventprotocol/sdk';
 import type { AttentionItem } from '../src/core/store';
 import { shouldNotify, notificationContent } from '../src/lib/notify';
 

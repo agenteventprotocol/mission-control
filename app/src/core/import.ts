@@ -2,7 +2,7 @@
 // reference stack's durable sink writes) fed through the same store reducer
 // as the live stream, as an offline source. DOM-free; the file-picker and
 // drag-drop UI lives in the fleet view.
-import type { AepEvent } from '@aep/sdk';
+import type { AepEvent } from '@agenteventprotocol/sdk';
 import { IMPORT_SOURCE, type Store } from './store.js';
 
 export interface ImportResult {

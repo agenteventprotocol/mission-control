@@ -4,7 +4,7 @@
 // windowing/filter logic upstream of it.
 import { describe, expect, it, vi } from 'vitest';
 import { render, fireEvent } from '@testing-library/react';
-import type { AepEvent } from '@aep/sdk';
+import type { AepEvent } from '@agenteventprotocol/sdk';
 import type { Lane, OrderedEvent } from '../../src/core/store';
 import { Timeline } from '../../src/views/session/timeline';
 

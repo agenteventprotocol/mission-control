@@ -15,7 +15,7 @@ Which component contains the bug? Check one:
 - [ ] attention dock + notifications
 - [ ] connection / resume (relay attach)
 - [ ] import / export capture
-- [ ] vendored `@aep/sdk` (`vendor/aep-sdk/`) — a snapshot pinned by
+- [ ] vendored `@agenteventprotocol/sdk` (`vendor/aep-sdk/`) — a snapshot pinned by
       `SDK_VERSION`; if the defect is in the content (not the vendoring),
       report it on
       [typescript-sdk](https://github.com/agenteventprotocol/typescript-sdk/issues/new/choose)

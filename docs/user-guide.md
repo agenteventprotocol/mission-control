@@ -19,7 +19,7 @@ pnpm install
 pnpm dev             # http://127.0.0.1:8788
 ```
 
-`pnpm dev` first compiles the vendored `@aep/sdk` (see
+`pnpm dev` first compiles the vendored `@agenteventprotocol/sdk` (see
 [`../vendor/aep-sdk/VENDORED.md`](../vendor/aep-sdk/VENDORED.md)), then
 serves the app. For a production bundle: `pnpm build`, then `pnpm preview`
 (or host `app/dist/` on any static server — nothing here proxies events).

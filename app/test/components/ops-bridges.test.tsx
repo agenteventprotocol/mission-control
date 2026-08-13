@@ -6,7 +6,7 @@
 // and busy verbs + immediate refresh on card actions.
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { act, cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
-import type { AepEvent } from '@aep/sdk';
+import type { AepEvent } from '@agenteventprotocol/sdk';
 import { OpsPanel } from '../../src/views/connections/ops-panel';
 import { saveOpsConfig, DEFAULT_OPS_URL, loadAgentEnv } from '../../src/state/config';
 import { ControllerContext } from '../../src/state/use-store';

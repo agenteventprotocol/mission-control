@@ -176,10 +176,10 @@ on its own SemVer line, alongside protocol releases, per the organization's
 pre-release version core (`0.1.0-dev`) for consistency only — nothing here
 is published to a registry.
 
-The vendored `@aep/sdk` snapshot under `vendor/aep-sdk/` (see
+The vendored `@agenteventprotocol/sdk` snapshot under `vendor/aep-sdk/` (see
 [Layout](#layout)) is pinned byte-for-byte to the TypeScript SDK commit
 recorded in `SDK_VERSION`, with a CI job that re-clones the pin and fails on
-drift. Once `@aep/sdk` is published, that vendored snapshot is replaced by
+drift. Once `@agenteventprotocol/sdk` is published, that vendored snapshot is replaced by
 an ordinary registry dependency (see `vendor/aep-sdk/VENDORED.md`).
 
 ## License

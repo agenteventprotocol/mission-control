@@ -3,7 +3,7 @@
 // trimmed, keep the id-dedupe set consistent across the boundary, and keep
 // derived lifecycle state working even when the raw events are gone.
 import { describe, expect, it } from 'vitest';
-import type { AepEvent } from '@aep/sdk';
+import type { AepEvent } from '@agenteventprotocol/sdk';
 import { IMPORT_SOURCE, Store, laneKey } from '../src/core/store';
 import { importCapture } from '../src/core/import';
 

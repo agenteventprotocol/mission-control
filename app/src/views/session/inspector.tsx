@@ -1,7 +1,7 @@
 // Event inspector: full envelope + data as a capture-aware JSON tree.
 import { useState } from 'react';
 import { Check, Copy, MousePointerClick } from 'lucide-react';
-import type { AepEvent } from '@aep/sdk';
+import type { AepEvent } from '@agenteventprotocol/sdk';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { CaptureBadge } from '@/components/event/capture-badge';

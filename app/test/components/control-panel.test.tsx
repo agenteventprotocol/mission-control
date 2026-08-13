@@ -5,7 +5,7 @@
 // reason, the agent's steer verb, the observed kind families).
 import { describe, expect, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import type { AepEvent } from '@aep/sdk';
+import type { AepEvent } from '@agenteventprotocol/sdk';
 import { Store } from '../../src/core/store';
 import { ControlPanel } from '../../src/views/session/control-panel';
 

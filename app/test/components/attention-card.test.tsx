@@ -2,7 +2,7 @@
 // responding/error states.
 import { describe, expect, it, vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
-import type { AepEvent } from '@aep/sdk';
+import type { AepEvent } from '@agenteventprotocol/sdk';
 import type { AttentionItem } from '../../src/core/store';
 import { Store } from '../../src/core/store';
 import type { Controller } from '../../src/state/controller';

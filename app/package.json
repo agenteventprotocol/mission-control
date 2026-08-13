@@ -1,5 +1,5 @@
 {
-  "name": "@aep/mission-control-app",
+  "name": "@agenteventprotocol/mission-control-app",
   "private": true,
   "version": "0.1.0-dev",
   "description": "Mission Control web app (React + Vite)",
@@ -18,7 +18,7 @@
     "test:e2e": "vitest run --project e2e"
   },
   "dependencies": {
-    "@aep/sdk": "workspace:*",
+    "@agenteventprotocol/sdk": "workspace:*",
     "@radix-ui/react-checkbox": "^1.3.7",
     "@radix-ui/react-dialog": "^1.1.19",
     "@radix-ui/react-scroll-area": "^1.2.14",

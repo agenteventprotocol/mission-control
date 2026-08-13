@@ -6,7 +6,7 @@
 // are DRAWN — nothing is re-derived.
 import { useEffect, useMemo, useRef, useState, useCallback } from 'react';
 import { Maximize, Minus, Plus } from 'lucide-react';
-import type { AepEvent } from '@aep/sdk';
+import type { AepEvent } from '@agenteventprotocol/sdk';
 import type { Dag, DagEdge } from '@/core/store';
 import { lastSegment } from '@/lib/aep';
 import { formatClock } from '@/lib/format';

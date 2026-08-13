@@ -3,7 +3,7 @@
 // with a counted skip, keep imported attention out of the actionable inbox,
 // and never leak bulk history into the live-arrival surfaces (tail, rate).
 import { describe, expect, it } from 'vitest';
-import type { AepEvent } from '@aep/sdk';
+import type { AepEvent } from '@agenteventprotocol/sdk';
 import { IMPORT_SOURCE, Store, laneKey } from '../src/core/store';
 import { importCapture } from '../src/core/import';
 

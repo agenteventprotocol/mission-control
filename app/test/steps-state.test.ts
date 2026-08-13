@@ -4,7 +4,7 @@
 // reconstruction is capture-honest: gated patches count, never fabricate.
 import { describe, expect, it } from 'vitest';
 import { Store } from '../src/core/store';
-import type { AepEvent } from '@aep/sdk';
+import type { AepEvent } from '@agenteventprotocol/sdk';
 
 const SRC = { kind: 'relay', relay: 'ws://fixture' } as const;
 let seq = 0;

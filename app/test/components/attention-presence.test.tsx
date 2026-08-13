@@ -5,7 +5,7 @@
 // and wires the notification click to focus + dock-open.
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { act, render } from '@testing-library/react';
-import type { AepEvent } from '@aep/sdk';
+import type { AepEvent } from '@agenteventprotocol/sdk';
 import { Controller } from '../../src/state/controller';
 import { AttentionPresence } from '../../src/App';
 

@@ -6,7 +6,7 @@
 // that reason means the verb IS accepted).
 import { describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import type { AepEvent } from '@aep/sdk';
+import type { AepEvent } from '@agenteventprotocol/sdk';
 import { laneKey, type LaneSource } from '../../src/core/store';
 import { Controller } from '../../src/state/controller';
 import { ControllerContext } from '../../src/state/use-store';

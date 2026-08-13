@@ -11,7 +11,7 @@ import {
   type ReactNode,
 } from 'react';
 import { createPortal } from 'react-dom';
-import type { AepEvent } from '@aep/sdk';
+import type { AepEvent } from '@agenteventprotocol/sdk';
 import { formatClock } from '@/lib/format';
 import { summarize } from '@/lib/summary';
 import { SeverityDot } from './severity-dot';

@@ -6,7 +6,7 @@
 // granularity.
 import { memo, useEffect, useMemo, useRef, useState } from 'react';
 import { ChevronRight } from 'lucide-react';
-import type { Severity } from '@aep/sdk';
+import type { Severity } from '@agenteventprotocol/sdk';
 import type { Store, Lane } from '@/core/store';
 import { familyOf, lastSegment, severityRank, shortSessionId } from '@/lib/aep';
 import { formatAge, formatCount } from '@/lib/format';

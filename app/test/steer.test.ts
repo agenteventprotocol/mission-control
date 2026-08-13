@@ -7,7 +7,7 @@
 // Connection is module-mocked per the controller-connect harness: no
 // sockets open; the fake records instruct() calls.
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import type { AepEvent } from '@aep/sdk';
+import type { AepEvent } from '@agenteventprotocol/sdk';
 
 const { instances } = vi.hoisted(() => ({
   instances: [] as Array<{

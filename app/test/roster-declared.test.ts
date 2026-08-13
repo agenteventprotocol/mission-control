@@ -6,15 +6,15 @@
 // advertise a surface never receives the request (roster) or gets the
 // enumerated fallback (from).
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import type { AepEvent } from '@aep/sdk';
-import type * as AepSdk from '@aep/sdk';
+import type { AepEvent } from '@agenteventprotocol/sdk';
+import type * as AepSdk from '@agenteventprotocol/sdk';
 
 const { subscribeCalls, rosterMock } = vi.hoisted(() => ({
   subscribeCalls: [] as Array<Record<string, unknown>>,
   rosterMock: vi.fn(),
 }));
 
-vi.mock('@aep/sdk', async (importOriginal) => {
+vi.mock('@agenteventprotocol/sdk', async (importOriginal) => {
   const real = await importOriginal<typeof AepSdk>();
   return {
     ...real,

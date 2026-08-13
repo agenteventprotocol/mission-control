@@ -5,7 +5,7 @@
 // (AEP-0004 §5: a control sender never depends on outcomes it has not
 // observed as Events).
 import { describe, expect, it } from 'vitest';
-import type { AepEvent } from '@aep/sdk';
+import type { AepEvent } from '@agenteventprotocol/sdk';
 import { Store, laneKey } from '../src/core/store';
 import { Controller } from '../src/state/controller';
 

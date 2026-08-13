@@ -14,7 +14,7 @@ importers:
 
   app:
     dependencies:
-      '@aep/sdk':
+      '@agenteventprotocol/sdk':
         specifier: workspace:*
         version: link:../vendor/aep-sdk
       '@radix-ui/react-checkbox':
